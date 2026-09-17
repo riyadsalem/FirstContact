@@ -3,5 +3,5 @@ namespace FirstContact;
 public class CreateContactResponse
 {
     public int Id { get; set; }
-    public string Name { get; set; } = string.Empty;
+    public required string Name { get; set; }
 }

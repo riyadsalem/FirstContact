@@ -1,4 +1,5 @@
 # FirstContact
+> Korte oefening rond unit testing, mocks en het testen van interacties tussen objecten.
 
 ## Opdracht
 
