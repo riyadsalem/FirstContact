@@ -16,6 +16,7 @@ public class GetAllTests
 
         List<GetAllContactResponse> result = service.GetAll();
 
+        // MME: Check Ids as well
         Assert.Equal(2, result.Count);
         Assert.Equal("Riyad", result[0].Name);
         Assert.Equal("Mark", result[1].Name);
