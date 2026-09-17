@@ -7,8 +7,7 @@ public class SearchTests
     public void PassesSearchTermToRepository()
     {
         IContactRepository repository = Substitute.For<IContactRepository>();
-        // MME: incorrect setup
-        repository.GetAll().Returns([]);
+        repository.Search(Arg.Any<string>()).Returns([]);
         ContactService service = new(repository);
 
         service.Search("Riyad");
@@ -29,9 +28,10 @@ public class SearchTests
 
         List<SearchContactResponse> result = service.Search("r");
 
-        // MME: Check Ids as well
         Assert.Equal(2, result.Count);
+        Assert.Equal(1, result[0].Id);
         Assert.Equal("Riyad", result[0].Name);
+        Assert.Equal(2, result[1].Id);
         Assert.Equal("Mark", result[1].Name);
     }
 
